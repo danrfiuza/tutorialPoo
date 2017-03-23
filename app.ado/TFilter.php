@@ -13,6 +13,11 @@ class TFilter extends TExpression
 
     }
 
+    /*método transform
+     *método usado para construir os filtros para uma query
+     *@param $value = array || bool || string || null
+     *@return array || bool || string || null
+     */
     private function transform($value)
     {
         //se for array

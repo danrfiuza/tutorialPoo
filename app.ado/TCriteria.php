@@ -4,9 +4,9 @@
 */
 class TCriteria extends TExpression
 {
-    private $expressions;//armazena a lista de expressões
-    private $operators;//armazena a lista de operadores
-    private $properties;//armazena a lista do critério
+    private $expressions;//array armazena a lista de expressões
+    private $operators;//array armazena a lista de operadores
+    private $properties;//array armazena a lista do critério
 
     /*método add()
      *adiciona uma expressão ao critério
@@ -26,10 +26,10 @@ class TCriteria extends TExpression
     {
         //concatena a lista de expressões
         if(is_array($this->expressions)){
-            $result = '';
+            $result = '';//inicializar result
             foreach($this->expressions as $i => $expression){
                 $operator = $this->operators[$i];
-                //concatena o operador com a respectiva expressão
+                //concatena o operador com a respectiva expressão se houver uma só expressão será concatenado somente um operador
                 $result .= $operator.' '.$expression->dump().'  ';
             }
             $result = trim($result);
